@@ -29,7 +29,8 @@ require_once 'conexion.php';
 <?php 
 
 $productos=Conexion::consultas('productos');
-foreach ($productos as $key => $val) {
+
+foreach ($productos as $val) {
 	echo "<tr>
 			<td>".$val['id']."</td>
 			<td>".$val['nombre']."</td>
@@ -43,7 +44,9 @@ foreach ($productos as $key => $val) {
 		
 
 	</table>
+
 	<a href="productosExcel.php" >Exportar Excel</a>
+
 </div>
 
 	

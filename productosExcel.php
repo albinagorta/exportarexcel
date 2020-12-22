@@ -1,7 +1,7 @@
 <?php 
 require_once 'conexion.php';
 
-	$nombre ='productos.xls';
+	$nombre ='productosenexcel.xls';
 
 			header('Expires: 0');
 			header('Cache-control: private');
@@ -22,7 +22,9 @@ require_once 'conexion.php';
 						<td style='font-weight:bold; border:1px solid #eee;background: #3b81ff;color:white;padding:10px;'>STOCK</td>
 						<td style='font-weight:bold; border:1px solid #eee;background: #3b81ff;color:white;padding:10px;'>ESTADO</td>
 						</tr>");
-				$reporte=conexion::consultas('productos');
+
+
+				$reporte=conexion::consultas('productos','AND id<>0');
 
 				foreach ($reporte as $value) {
 
